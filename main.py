@@ -51,32 +51,18 @@ def main():
 
             # iterate through and return valid and invalid answers
             answer_validation = ''
-            if len(input_words) >= 5:
-                for i in range(len(input_words)):
-                    # make sure comparisons are only made for the 5 conjugations, not additional values
-                    if i < 5:
-                        if input_words[i] == answers_rand[words_rand[a]][i]:
-                            answer_validation += input_words[i] + ' (CORRECT) '
-                            num_correct += 1
-                            num_total += 1
-                        else:
-                            answer_validation += input_words[i] + f' (WRONG: {answers_rand[words_rand[a]][i]}) '
-                            num_total += 1
-                    else:
-                        answer_validation += input_words[i] + ' (N/A) '
-            else:
-                for i in range(5):
-                    if i < len(input_words):
-                        if input_words[i] == answers_rand[words_rand[a]][i]:
-                            answer_validation += input_words[i] + ' (CORRECT) '
-                            num_correct += 1
-                            num_total += 1
-                        else:
-                            answer_validation += input_words[i] + f' (WRONG: {answers_rand[words_rand[a]][i]}) '
-                            num_total += 1
-                    else:
-                        answer_validation += f'(WRONG: {answers_rand[words_rand[a]][i]}) '
+            for i in range(5):
+                if i < len(input_words):
+                    if input_words[i] == answers_rand[words_rand[a]][i]:
+                        answer_validation += input_words[i] + ' (CORRECT) '
+                        num_correct += 1
                         num_total += 1
+                    else:
+                        answer_validation += input_words[i] + f' (WRONG: {answers_rand[words_rand[a]][i]}) '
+                        num_total += 1
+                else:
+                    answer_validation += f'(WRONG: {answers_rand[words_rand[a]][i]}) '
+                    num_total += 1
 
             # show user correct and incorrect answers
             print(answer_validation)
