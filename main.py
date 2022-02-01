@@ -1,5 +1,6 @@
 import random
 import math
+from colors import *
 
 def main():
 
@@ -56,14 +57,14 @@ def main():
             for i in range(5):
                 if i < len(input_words):
                     if input_words[i] == answers[words[a]][i]:
-                        answer_validation += input_words[i] + ' (CORRECT) '
+                        answer_validation += colors.OKGREEN + input_words[i] + colors.ENDC + ' '
                         num_correct += 1
                         num_total += 1
                     else:
-                        answer_validation += input_words[i] + f' (WRONG: {answers[words[a]][i]}) '
+                        answer_validation += colors.FAIL + input_words[i] + f' {colors.WARNING}({answers[words[a]][i]}){colors.ENDC} '
                         num_total += 1
                 else:
-                    answer_validation += f'(WRONG: {answers[words[a]][i]}) '
+                    answer_validation += f'{colors.WARNING}({answers[words[a]][i]}){colors.ENDC} '
                     num_total += 1
 
             # show user correct and incorrect answers
