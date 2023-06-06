@@ -1,4 +1,4 @@
-# latin_prototype
+# Latin Conjugation Prototype
 To help better understand the logic necessay to evaluate user answers for the brute-force-latin project,
 I decided to make a python script that models the same behavior we are seeking to create in Javascript.
 
